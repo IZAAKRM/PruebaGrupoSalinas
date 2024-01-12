@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model Prueba.Models.Contendor
+<script src="~/Scripts/script.js"></script>
+<div class="row">
+    <div class="col-2">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Alta Articulo
+        </button>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Existencia</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Venta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.productos)
+        {
+            <tr>
+
+                <th>@item.codigo</th>
+                <td>@item.Nombre_Producto</td>
+                <td>@item.existencia</td>
+                <td>@item.precio</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary" onclick="ventaProducto(@item.codigo)">Vender</button>
+                </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="form">                   
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input id="nom" class="form-control" type="text" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Precio</label>
+                        <input id="pre" class="form-control" type="number" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Existencia</label>
+                        <input id="exis" class="form-control" type="number" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="altaProducto()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalVenta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="form">                    
+                    <div class="mb-3">
+                        <input id="codigo" class="form-control" type="number" hidden />
+                        <label class="form-label">Cantidad</label>
+                        <input id="cant" class="form-control" type="number" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="venderProducto()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

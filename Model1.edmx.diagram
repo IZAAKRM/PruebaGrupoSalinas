@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="335af6bd1db648f39930aeb07a38b0fd" Name="Diagram1" >
+        <EntityTypeShape EntityType="db_a99140_qfaModel.producto" Width="1.5" PointX="4.375" PointY="1" />
+        <EntityTypeShape EntityType="db_a99140_qfaModel.venta" Width="1.5" PointX="6.625" PointY="1" />
+        <AssociationConnector Association="db_a99140_qfaModel.FK__venta__codigoPro__308E3499" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
